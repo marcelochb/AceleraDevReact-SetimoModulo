@@ -1,15 +1,18 @@
-import React from 'react';
+import React from "react";
 
-import User from '../../components/User';
-import Loading from '../../components/Loading';
+import User from "../../components/User";
+import Loading from "../../components/Loading";
 
-import './UsersList.scss';
+import "./UsersList.scss";
 
 const UersList = ({ users }) => {
   return (
-    <section className="users-list">
+    <section className="users-list" data-testid="users-list">
+      {users.map((user) => (
+        <User key={user.id} infoUser={user} />
+      ))}
     </section>
-  )
+  );
 };
 
 export default UersList;
